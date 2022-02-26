@@ -2,14 +2,14 @@ package dev.fstudio.mc_discord_bot.diskord.command.stats
 
 import com.jessecorbett.diskord.api.channel.Embed
 import com.jessecorbett.diskord.api.channel.EmbedFooter
-import dev.fstudio.mc_discord_bot.*
 import dev.fstudio.mc_discord_bot.api.mcworldstats.stats.response.Stats
-import dev.fstudio.mc_discord_bot.utils.MicsUtil.getAllBlocks
-import dev.fstudio.mc_discord_bot.utils.MicsUtil.getGroundWalkedDistance
-import dev.fstudio.mc_discord_bot.utils.MicsUtil.getRandomColor
-import dev.fstudio.mc_discord_bot.utils.MicsUtil.getSwamDistance
-import dev.fstudio.mc_discord_bot.utils.MicsUtil.tickToTime
-import dev.fstudio.mc_discord_bot.utils.MicsUtil.withSuffix
+import dev.fstudio.mc_discord_bot.util.*
+import dev.fstudio.mc_discord_bot.util.MicsUtil.getAllBlocks
+import dev.fstudio.mc_discord_bot.util.MicsUtil.getGroundWalkedDistance
+import dev.fstudio.mc_discord_bot.util.MicsUtil.getRandomColor
+import dev.fstudio.mc_discord_bot.util.MicsUtil.getSwamDistance
+import dev.fstudio.mc_discord_bot.util.extensions.tickToTime
+import dev.fstudio.mc_discord_bot.util.extensions.withSuffix
 
 fun Embed.embedPlayerStatsMessage(username: String, data: Stats) {
     title = "$playerStatsTitle - $username"

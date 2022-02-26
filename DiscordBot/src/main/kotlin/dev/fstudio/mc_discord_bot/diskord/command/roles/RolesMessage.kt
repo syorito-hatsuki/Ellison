@@ -5,9 +5,9 @@ import com.jessecorbett.diskord.api.channel.EmbedField
 import com.jessecorbett.diskord.api.channel.EmbedFooter
 import com.jessecorbett.diskord.api.common.Emoji
 import com.jessecorbett.diskord.api.common.formatted
-import dev.fstudio.mc_discord_bot.footerText
-import dev.fstudio.mc_discord_bot.utils.MicsUtil
-import dev.fstudio.mc_discord_bot.utils.MicsUtil.toRoleMention
+import dev.fstudio.mc_discord_bot.util.MicsUtil
+import dev.fstudio.mc_discord_bot.util.extensions.toRoleMention
+import dev.fstudio.mc_discord_bot.util.footerText
 
 fun embedRolesMessage(): Embed {
     val roleFields = mutableListOf(

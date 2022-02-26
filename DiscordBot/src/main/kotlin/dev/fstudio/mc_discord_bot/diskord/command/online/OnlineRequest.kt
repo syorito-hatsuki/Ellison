@@ -5,12 +5,12 @@ import com.jessecorbett.diskord.api.common.Message
 import com.jessecorbett.diskord.bot.BotContext
 import dev.fstudio.mc_discord_bot.api.mcapi.ping.response.ServerPing
 import dev.fstudio.mc_discord_bot.di.mcApi
-import dev.fstudio.mc_discord_bot.di.mcStats
-import dev.fstudio.mc_discord_bot.onlineRequestError
-import dev.fstudio.mc_discord_bot.realDaysInDay
-import dev.fstudio.mc_discord_bot.utils.MicsUtil.fixUnderline
-import dev.fstudio.mc_discord_bot.utils.MicsUtil.tickToTime
-import dev.fstudio.mc_discord_bot.utils.config.ConfigManager.config
+import dev.fstudio.mc_discord_bot.di.mcStatsApi
+import dev.fstudio.mc_discord_bot.util.config.ConfigManager.config
+import dev.fstudio.mc_discord_bot.util.extensions.fixUnderline
+import dev.fstudio.mc_discord_bot.util.extensions.tickToTime
+import dev.fstudio.mc_discord_bot.util.onlineRequestError
+import dev.fstudio.mc_discord_bot.util.realDaysInDay
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 
@@ -39,7 +39,7 @@ suspend fun requestAdditionalInfoForFields(data: ServerPing): MutableList<EmbedF
         coroutineScope {
             launch {
                 runCatching {
-                    mcStats.getStats(player.name)
+                    mcStatsApi.getStats(player.name)
                 }.onSuccess {
                     playersList.add(
                         EmbedField(

@@ -3,7 +3,7 @@ package dev.fstudio.mc_discord_bot.diskord.command.rules
 import com.jessecorbett.diskord.api.channel.Embed
 import com.jessecorbett.diskord.api.channel.EmbedField
 import com.jessecorbett.diskord.api.channel.EmbedFooter
-import dev.fstudio.mc_discord_bot.footerText
+import dev.fstudio.mc_discord_bot.util.footerText
 
 fun Embed.embedRulesMessage() {
     val ruleFields = mutableListOf(

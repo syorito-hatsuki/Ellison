@@ -4,7 +4,7 @@ import com.jessecorbett.diskord.api.channel.MessageEdit
 import com.jessecorbett.diskord.api.common.Message
 import com.jessecorbett.diskord.bot.BotContext
 import com.jessecorbett.diskord.util.words
-import dev.fstudio.mc_discord_bot.utils.config.ConfigManager
+import dev.fstudio.mc_discord_bot.util.config.ConfigManager
 
 suspend fun BotContext.requestRolesList(message: Message) {
     if (message.channelId == ConfigManager.config.discord.rolesChannelId) {

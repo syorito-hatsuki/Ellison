@@ -1,8 +1,8 @@
 package dev.fstudio.mc_discord_bot.model
 
-import dev.fstudio.mc_discord_bot.day
-import dev.fstudio.mc_discord_bot.hour
-import dev.fstudio.mc_discord_bot.minute
+import dev.fstudio.mc_discord_bot.util.day
+import dev.fstudio.mc_discord_bot.util.hour
+import dev.fstudio.mc_discord_bot.util.minute
 
 data class Time(
     val days: Int,

@@ -8,7 +8,7 @@ import dev.fstudio.mc_discord_bot.diskord.command.roles.rolesCommand
 import dev.fstudio.mc_discord_bot.diskord.command.rules.rulesCommand
 import dev.fstudio.mc_discord_bot.diskord.command.stats.statsCommand
 import dev.fstudio.mc_discord_bot.diskord.command.top.topCommand
-import dev.fstudio.mc_discord_bot.utils.config.ConfigManager.config
+import dev.fstudio.mc_discord_bot.util.config.ConfigManager.config
 
 fun BotBase.loadClassicCommands() {
     classicCommands(config.discord.commandPrefix) {

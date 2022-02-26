@@ -4,13 +4,13 @@ import com.jessecorbett.diskord.api.channel.Embed
 import com.jessecorbett.diskord.api.channel.EmbedField
 import com.jessecorbett.diskord.api.channel.EmbedFooter
 import dev.fstudio.mc_discord_bot.api.mcworldstats.common.response.Player
-import dev.fstudio.mc_discord_bot.footerText
-import dev.fstudio.mc_discord_bot.realDaysInDay
-import dev.fstudio.mc_discord_bot.topPlayersTitle
-import dev.fstudio.mc_discord_bot.utils.MicsUtil.convertToDead
-import dev.fstudio.mc_discord_bot.utils.MicsUtil.fixUnderline
-import dev.fstudio.mc_discord_bot.utils.MicsUtil.getRandomColor
-import dev.fstudio.mc_discord_bot.utils.MicsUtil.tickToTime
+import dev.fstudio.mc_discord_bot.util.MicsUtil.getRandomColor
+import dev.fstudio.mc_discord_bot.util.extensions.convertToDead
+import dev.fstudio.mc_discord_bot.util.extensions.fixUnderline
+import dev.fstudio.mc_discord_bot.util.extensions.tickToTime
+import dev.fstudio.mc_discord_bot.util.footerText
+import dev.fstudio.mc_discord_bot.util.realDaysInDay
+import dev.fstudio.mc_discord_bot.util.topPlayersTitle
 
 fun Embed.embedPlayersTopMessage(data: List<Player>) {
     val topTen = mutableListOf<EmbedField>()

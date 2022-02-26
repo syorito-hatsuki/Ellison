@@ -4,9 +4,8 @@ import com.jessecorbett.diskord.api.channel.Embed
 import com.jessecorbett.diskord.api.channel.EmbedField
 import com.jessecorbett.diskord.api.channel.EmbedFooter
 import com.jessecorbett.diskord.api.channel.EmbedImage
-import dev.fstudio.mc_discord_bot.*
 import dev.fstudio.mc_discord_bot.api.mcapi.ping.response.ServerPing
-import dev.fstudio.mc_discord_bot.utils.MicsUtil
+import dev.fstudio.mc_discord_bot.util.*
 
 fun Embed.embedOnlinePlayerListMessage(data: ServerPing, playersList: MutableList<EmbedField>) {
     title = onlinePlayersTitle

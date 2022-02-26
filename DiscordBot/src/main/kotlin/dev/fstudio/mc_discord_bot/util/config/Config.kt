@@ -1,4 +1,4 @@
-package dev.fstudio.mc_discord_bot.utils.config
+package dev.fstudio.mc_discord_bot.util.config
 
 import kotlinx.serialization.Serializable
 import net.peanuuutz.tomlkt.Comment
@@ -9,8 +9,6 @@ data class Config(
     @Comment("WebAPI host & port")
     val webHost: String = "localhost",
     val webPort: Int = 8080,
-    @Comment("Different tokens")
-    val pastebinToken: String = "",
     @Comment("Minecraft server connection data")
     val connection: Connection = Connection(),
     @Comment("Discord bot setup data")

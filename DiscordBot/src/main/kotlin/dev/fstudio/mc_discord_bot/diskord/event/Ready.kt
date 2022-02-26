@@ -3,7 +3,7 @@ package dev.fstudio.mc_discord_bot.diskord.event
 import com.jessecorbett.diskord.bot.BotBase
 import com.jessecorbett.diskord.bot.EventDispatcherWithContext
 import dev.fstudio.mc_discord_bot.di.mcApi
-import dev.fstudio.mc_discord_bot.utils.config.ConfigManager.config
+import dev.fstudio.mc_discord_bot.util.config.ConfigManager.config
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay

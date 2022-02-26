@@ -7,7 +7,7 @@ import dev.fstudio.mc_discord_bot.diskord.command.loadClassicCommands
 import dev.fstudio.mc_discord_bot.diskord.event.message_create.suggestionChatManagement
 import dev.fstudio.mc_discord_bot.diskord.event.message_create.supportChatManagement
 import dev.fstudio.mc_discord_bot.diskord.event.requestPlayerOnlineStatus
-import dev.fstudio.mc_discord_bot.utils.config.ConfigManager.config
+import dev.fstudio.mc_discord_bot.util.config.ConfigManager.config
 import kotlinx.coroutines.DelicateCoroutinesApi
 import org.koin.core.context.startKoin
 

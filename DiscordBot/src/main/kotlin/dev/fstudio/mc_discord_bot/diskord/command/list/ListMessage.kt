@@ -2,12 +2,12 @@ package dev.fstudio.mc_discord_bot.diskord.command.list
 
 import com.jessecorbett.diskord.api.channel.Embed
 import com.jessecorbett.diskord.api.channel.EmbedFooter
-import dev.fstudio.mc_discord_bot.allPlayersTitle
 import dev.fstudio.mc_discord_bot.api.mcworldstats.common.response.Player
-import dev.fstudio.mc_discord_bot.footerText
-import dev.fstudio.mc_discord_bot.utils.MicsUtil.convertToDead
-import dev.fstudio.mc_discord_bot.utils.MicsUtil.fixUnderline
-import dev.fstudio.mc_discord_bot.utils.MicsUtil.getRandomColor
+import dev.fstudio.mc_discord_bot.util.MicsUtil.getRandomColor
+import dev.fstudio.mc_discord_bot.util.allPlayersTitle
+import dev.fstudio.mc_discord_bot.util.extensions.convertToDead
+import dev.fstudio.mc_discord_bot.util.extensions.fixUnderline
+import dev.fstudio.mc_discord_bot.util.footerText
 
 fun Embed.embedPlayerListMessage(data: List<Player>) {
     title = allPlayersTitle

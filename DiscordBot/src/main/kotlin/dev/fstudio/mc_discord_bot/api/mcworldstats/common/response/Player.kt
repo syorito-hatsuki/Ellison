@@ -1,7 +1,7 @@
 package dev.fstudio.mc_discord_bot.api.mcworldstats.common.response
 
 
-import dev.fstudio.mc_discord_bot.utils.MicsUtil.fixUnderline
+import dev.fstudio.mc_discord_bot.util.extensions.fixUnderline
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

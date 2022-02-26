@@ -1,6 +1,6 @@
-package dev.fstudio.mc_discord_bot
+package dev.fstudio.mc_discord_bot.util
 
-import dev.fstudio.mc_discord_bot.utils.config.ConfigManager.config
+import dev.fstudio.mc_discord_bot.util.config.ConfigManager.config
 import java.util.*
 import kotlin.reflect.KProperty
 
@@ -15,7 +15,7 @@ private class LocaleMessage {
 }
 
 /*   Messages   */
-val footerText: String = bundle.getString("embedFooterText")
+val footerText by LocaleMessage()
 val onlineRequestError by LocaleMessage()
 val statsRequestError by LocaleMessage()
 
