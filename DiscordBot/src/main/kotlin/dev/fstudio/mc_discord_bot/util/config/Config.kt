@@ -27,15 +27,27 @@ data class Discord(
     @Comment("Currently available language -> [en, fi, ru]")
     val botLocale: String = "en",
     val commandPrefix: String = "!",
-    @Comment("Channel ID's")
-    val privateServerChannelId: String = "",
-    val suggestionChannelId: String = "",
-    val adminChannelId: String = "",
-    val rolesChannelId: String = "",
-    val rulesChannelId: String = "",
-    val supportChannelId: String = "",
     @Comment("Show online count in bot status")
     val discordStatus: Boolean = false,
     @Comment("Server status update time in seconds")
-    val statusUpdateTime: Int = 30
+    val statusUpdateTime: Int = 30,
+    @Comment("Channel ID's")
+    val privateServerChannelId: String = "",
+    val suggestionChannelId: String = "",
+    val supportChannelId: String = "",
+    val adminChannelId: String = "",
+    val rolesInfo: RolesInfo = RolesInfo(),
+    val rulesInfo: RulesInfo = RulesInfo(),
+)
+
+@Serializable
+data class RolesInfo(
+    val rolesChannelId: String = "",
+    val rolesMessageId: String = "",
+)
+
+@Serializable
+data class RulesInfo(
+    val rulesChannelId: String = "",
+    val rulesMessageId: String = "",
 )

@@ -4,13 +4,15 @@ import com.jessecorbett.diskord.api.channel.MessageEdit
 import com.jessecorbett.diskord.api.common.Message
 import com.jessecorbett.diskord.bot.BotContext
 import com.jessecorbett.diskord.util.words
-import dev.fstudio.mc_discord_bot.util.config.ConfigManager
+import dev.fstudio.mc_discord_bot.util.config.ConfigManager.config
 
 suspend fun BotContext.requestRolesList(message: Message) {
-    if (message.channelId == ConfigManager.config.discord.rolesChannelId) {
+    if (message.channelId == config.discord.rolesInfo.rolesChannelId
+        || message.channelId == config.discord.adminChannelId
+    ) {
         if (message.words.size == 2 && message.words[1] == "update") {
-            channel(message.channelId).editMessage(
-                "832663275065573386",
+            channel(config.discord.rolesInfo.rolesChannelId).editMessage(
+                config.discord.rolesInfo.rolesMessageId,
                 MessageEdit("", embed = embedRolesMessage())
             )
         } else {

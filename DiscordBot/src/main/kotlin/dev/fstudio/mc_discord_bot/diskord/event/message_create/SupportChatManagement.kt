@@ -17,24 +17,27 @@ import io.ktor.client.request.*
 
 fun EventDispatcherWithContext.supportChatManagement() {
     onMessageCreate { message ->
+        val embedList = mutableListOf<EmbedField>()
         if (message.channelId == config.discord.supportChannelId) {
             if (message.attachments.isNotEmpty()) {
-                val embedList = mutableListOf<EmbedField>()
+                var haveAnotherFile = false
                 message.attachments.forEach {
-                    if (it.contentType?.contains("text/plain") == true && it.fileName.isLog()) {
-                        val response: io.ktor.client.statement.HttpResponse = HttpClient().get(it.url)
-                        response.receive<String>().apply {
-                            val urlKey = hastebinApi.uploadText(this).values
-                            //TODO Локализировать текст
-                            embedList.add(
-                                EmbedField(
-                                    "Название файла: ${it.fileName}",
-                                    "https://www.toptal.com/developers/hastebin/${urlKey.first()}",
-                                    false
+                    if (it.contentType?.contains("text/plain") == true) {
+                        if (it.fileName.isLog()) {
+                            val response: io.ktor.client.statement.HttpResponse = HttpClient().get(it.url)
+                            response.receive<String>().apply {
+                                val urlKey = hastebinApi.uploadText(this).values
+                                //TODO Локализировать текст
+                                embedList.add(
+                                    EmbedField(
+                                        "Название файла: ${it.fileName}",
+                                        "https://www.toptal.com/developers/hastebin/${urlKey.first()}",
+                                        false
+                                    )
                                 )
-                            )
+                            }
                         }
-                    } else {
+                    } else if (it.contentType.isNullOrBlank()) {
                         //TODO Локализировать текст
                         embedList.add(
                             EmbedField(
@@ -43,11 +46,15 @@ fun EventDispatcherWithContext.supportChatManagement() {
                                 false
                             )
                         )
+                    } else {
+                        haveAnotherFile = true
                     }
                     println("===\nContentType: ${it.contentType}\nFilename: ${it.fileName}\nURL: ${it.url}")
                 }
-                message.delete()
-                message.respond(block = msg(message.author, embedList))
+                if (!haveAnotherFile) {
+                    message.delete()
+                    message.respond(block = msg(message.author, embedList))
+                }
             }
         }
     }
@@ -65,5 +72,6 @@ fun msg(user: User, embedList: MutableList<EmbedField>): Embed.() -> Unit {
 }
 
 private fun String.isLog(): Boolean {
-    return this.endsWith(".txt", true) || this.endsWith(".log", true)
+    return this.endsWith(".txt", true)
+            || this.endsWith(".log", true)
 }

@@ -6,7 +6,7 @@ import dev.fstudio.mc_discord_bot.util.config.ConfigManager.config
 
 
 suspend fun BotContext.requestRules(message: Message) {
-    if (message.channelId == config.discord.rulesChannelId) {
+    if (message.channelId == config.discord.rulesInfo.rulesChannelId) {
         message.respond {
             embedRulesMessage()
         }

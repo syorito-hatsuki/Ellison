@@ -1,4 +1,4 @@
-package dev.fstudio.mc_discord_bot.diskord.event
+package dev.fstudio.mc_discord_bot.diskord.event.ready
 
 import com.jessecorbett.diskord.bot.BotBase
 import com.jessecorbett.diskord.bot.EventDispatcherWithContext
