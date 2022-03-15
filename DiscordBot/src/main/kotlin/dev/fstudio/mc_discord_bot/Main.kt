@@ -4,6 +4,7 @@ import com.jessecorbett.diskord.bot.bot
 import com.jessecorbett.diskord.bot.events
 import dev.fstudio.mc_discord_bot.di.networkModule
 import dev.fstudio.mc_discord_bot.diskord.command.loadClassicCommands
+import dev.fstudio.mc_discord_bot.diskord.event.message_create.reportChatManagement
 import dev.fstudio.mc_discord_bot.diskord.event.message_create.suggestionChatManagement
 import dev.fstudio.mc_discord_bot.diskord.event.message_create.supportChatManagement
 import dev.fstudio.mc_discord_bot.diskord.event.ready.requestPlayerOnlineStatus
@@ -25,6 +26,7 @@ suspend fun main() {
             /*   On Message Created   */
             suggestionChatManagement()
             supportChatManagement()
+            reportChatManagement()
         }
         loadClassicCommands()
     }

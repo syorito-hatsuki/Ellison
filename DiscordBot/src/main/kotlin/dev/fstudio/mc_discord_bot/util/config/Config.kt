@@ -36,6 +36,7 @@ data class Discord(
     val suggestionChannelId: String = "",
     val supportChannelId: String = "",
     val adminChannelId: String = "",
+    val reportChannelId: String = "",
     val rolesInfo: RolesInfo = RolesInfo(),
     val rulesInfo: RulesInfo = RulesInfo(),
 )

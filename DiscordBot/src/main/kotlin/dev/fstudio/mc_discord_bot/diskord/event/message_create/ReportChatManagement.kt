@@ -8,11 +8,9 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope
 
-//TODO Разобрать на подфайлы и подметоды
-
-fun EventDispatcherWithContext.suggestionChatManagement() {
+fun EventDispatcherWithContext.reportChatManagement() {
     onMessageCreate { message ->
-        if (message.channelId == ConfigManager.config.discord.suggestionChannelId) {
+        if (message.channelId == ConfigManager.config.discord.reportChannelId) {
             if (message.type == MessageType.REPLY) {
                 channel(message.channelId).deleteMessage(message.id)
             }
@@ -25,10 +23,6 @@ fun EventDispatcherWithContext.suggestionChatManagement() {
                             message.id,
                             CreateThread(threadName)
                         )
-                    },
-                    async {
-                        message.react("✅")
-                        message.react("❌")
                     }
                 )
                 task.awaitAll()
