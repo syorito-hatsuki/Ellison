@@ -17,16 +17,19 @@ suspend fun main() {
     startKoin {
         modules(networkModule)
     }
-
     bot(config.discord.botToken) {
         events {
             /*   On Create   */
-            requestPlayerOnlineStatus(this@bot)
+            try {
+                requestPlayerOnlineStatus(this@bot)
 
-            /*   On Message Created   */
-            suggestionChatManagement()
-            supportChatManagement()
-            reportChatManagement()
+                /*   On Message Created   */
+                suggestionChatManagement()
+                supportChatManagement()
+                reportChatManagement()
+            } catch (e: Exception) {
+                logger.error(e.message)
+            }
         }
         loadClassicCommands()
     }

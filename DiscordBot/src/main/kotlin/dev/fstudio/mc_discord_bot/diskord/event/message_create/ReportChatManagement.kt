@@ -18,7 +18,9 @@ fun EventDispatcherWithContext.reportChatManagement() {
             coroutineScope {
                 val task = listOf(
                     async {
-                        val threadName = message.content.substring(0, 100)
+                        val threadName: String = if (message.content.length > 100)
+                            message.content.substring(0, 100) else message.content
+
                         channel(message.channelId).createThreadFromMessage(
                             message.id,
                             CreateThread(threadName)
