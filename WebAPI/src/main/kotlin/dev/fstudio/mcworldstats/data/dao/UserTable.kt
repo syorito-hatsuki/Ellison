@@ -1,4 +1,4 @@
-package dev.fstudio.mcworldstats.web.dao
+package dev.fstudio.mcworldstats.data.dao
 
 import org.jetbrains.exposed.sql.Table
 

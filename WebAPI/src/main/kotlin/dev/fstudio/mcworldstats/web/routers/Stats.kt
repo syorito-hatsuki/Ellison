@@ -1,8 +1,8 @@
 package dev.fstudio.mcworldstats.web.routers
 
+import dev.fstudio.mcworldstats.data.dao.UserTable
+import dev.fstudio.mcworldstats.data.dto.minecraft.stats.SimplifyStats
 import dev.fstudio.mcworldstats.util.ConfigManager.config
-import dev.fstudio.mcworldstats.web.api.model.SimplifyStats
-import dev.fstudio.mcworldstats.web.dao.UserTable
 import dev.fstudio.mcworldstats.web.plugins.json
 import io.ktor.application.*
 import io.ktor.http.*

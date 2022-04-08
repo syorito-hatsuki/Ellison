@@ -1,5 +1,5 @@
 package dev.fstudio.mcworldstats
 
 object Build {
-    const val VERSION = 1.0
+    const val VERSION = 0.1
 }

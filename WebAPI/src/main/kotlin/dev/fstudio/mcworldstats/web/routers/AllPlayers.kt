@@ -1,6 +1,6 @@
 package dev.fstudio.mcworldstats.web.routers
 
-import dev.fstudio.mcworldstats.web.dao.UserTable
+import dev.fstudio.mcworldstats.data.dao.UserTable
 import dev.fstudio.mcworldstats.web.models.Player
 import io.ktor.application.*
 import io.ktor.response.*

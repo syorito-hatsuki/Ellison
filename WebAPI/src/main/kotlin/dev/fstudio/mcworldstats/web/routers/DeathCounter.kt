@@ -32,7 +32,8 @@ fun Route.routeDeathCounter() {
                                 type = "text/css"
                             }
                             style {
-                                +"h1 { font-family: 'forgotten-futurist-regular', sans-serif; }"
+
+                                + "h1 { font-family: 'forgotten-futurist-regular', sans-serif; }"
                             }
                         }
                         body {

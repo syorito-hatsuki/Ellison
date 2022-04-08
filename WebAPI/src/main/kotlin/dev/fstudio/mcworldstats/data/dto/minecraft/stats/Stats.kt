@@ -1,4 +1,4 @@
-package dev.fstudio.mcworldstats.web.api.model
+package dev.fstudio.mcworldstats.data.dto.minecraft.stats
 
 
 import kotlinx.serialization.SerialName
